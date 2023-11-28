@@ -29,14 +29,12 @@ dataset= st.container()
 # features = st.container()
 model_training = st.container()
 
-# load our best model
-PATH = "C:/Users/DELL/Formation OC/API + STREAMLIT/Datas/"
 
 #Load Dataframe
 
-X_test=pd.read_csv(PATH+'X_test.csv')
-y_test=pd.read_csv(PATH+'y_test.csv')
-dataframe=pd.read_csv(PATH+'df_test.csv')
+X_test=pd.read_csv('./Datas/X_test.csv')
+y_test=pd.read_csv('./Datas/y_test.csv')
+dataframe=pd.read_csv('./Datas/df_test.csv')
 
 
 
@@ -84,7 +82,7 @@ with model_training:
     # st.text("You can choose some hyperparameters for the chosen model")
     
     model_selection_column, display_column = st.columns(2)
-    test_clients = pd.read_csv(PATH+'df_test.csv')
+    test_clients = pd.read_csv('./Datas/df_test.csv')
     liste_id = test_clients['SK_ID_CURR'].tolist()
 
      # Choose a client

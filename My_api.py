@@ -11,15 +11,13 @@ warnings.filterwarnings("ignore", category=UserWarning)
 app = Flask(__name__)
 
 
-#Load Dataframe
-PATH = "C:/Users/DELL/Formation OC/API + STREAMLIT/Datas/"
 
 # X_test=pd.read_csv(PATH+'X_test.csv')
-y_test=pd.read_csv(PATH+'y_test.csv')
-dataframe=pd.read_csv(PATH+'df_test.csv')
+y_test=pd.read_csv('./Datas/y_test.csv')
+dataframe=pd.read_csv('./Datas/df_test.csv')
 
 # rb means "Read Binary format"
-model = pickle.load(open('C:/Users/DELL/Formation OC/API + STREAMLIT/Datas/model.pkl','rb'))
+model = pickle.load(open('./Datas/model.pkl','rb'))
 
 # Chargement de notre meilleur modèle
 # model_path = "C:/Users/DELL/Formation OC/Are you bankable/mlruns/0/5a2e644740814386984668c09df0f373/artifacts/best_model/model.pkl"
