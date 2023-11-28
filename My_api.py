@@ -1,7 +1,7 @@
 from flask import Flask, jsonify
-from joblib import load
+# from joblib import load
 import pandas as pd
-import joblib
+# import joblib
 import pickle
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning)
