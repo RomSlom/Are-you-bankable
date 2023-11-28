@@ -2,3 +2,4 @@ numpy
 json5==0.9.1
 Flask==1.1.1
 gunicorn
+streamlit
