@@ -3,4 +3,4 @@ json5
 Flask
 gunicorn
 streamlit
-scikit-learn
+lightgbm
