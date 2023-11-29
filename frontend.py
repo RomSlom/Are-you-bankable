@@ -10,7 +10,7 @@ import json
 
 
 
-# show_pages_from_config (".streamlit/pages.toml")
+show_pages_from_config (".streamlit/pages.toml")
 
 st.markdown(
     """
@@ -116,7 +116,7 @@ with dataset:
 
 #         st.markdown(chaine)
 
-        st.subheader("Caractéristiques influençant le score")
+st.subheader("Caractéristiques influençant le score")
           
           
 #MLFLOW tracking    
