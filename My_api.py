@@ -14,8 +14,8 @@ app = Flask(__name__)
 
 # X_test=pd.read_csv(PATH+'X_test.csv')
 # y_test=pd.read_csv('./Datas/y_test.csv')
-dataframe=pd.read_csv('./Datas/df_test.csv')
-dataframePartial = dataframe.sample(frac=0.05, axis = None)
+dataframe=pd.read_csv('./Datas/dFreduced.csv')
+# dataframePartial = dataframe.sample(frac=0.05, axis = None)
 
 # Chargement de notre meilleur modèle
 # rb means "Read Binary format"
@@ -43,7 +43,7 @@ def credit(id_client):
     ID = int(id_client)   
     
 # récupération des données clients
-    X = dataframePartial[dataframePartial['SK_ID_CURR'] == ID]
+    X = dataframe[dataframe['SK_ID_CURR'] == ID]
     X = X.drop(['TARGET', 'SK_ID_CURR'], axis=1)
     
     prediction = model.predict(X)
