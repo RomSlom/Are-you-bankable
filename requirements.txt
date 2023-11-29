@@ -28,4 +28,5 @@ sqlparse==0.4.4
 st-pages==0.4.5
 streamlit==1.28.1
 virtualenv==20.24.6
+lightgbm
 
