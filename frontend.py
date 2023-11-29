@@ -94,11 +94,11 @@ with model_training:
     
     if chosen_client == '':
         st.write('Veuillez recommencer')
-        
+    
+    # Si le numéro de client est un numéro valide:
     elif (int(chosen_client) in liste_id) :
           
         # On peut appeler l'API
-          
         API_url = "http://127.0.0.1:5000/credit/" + chosen_client
           
         with st.spinner('Attente du score du client choisi ...'):

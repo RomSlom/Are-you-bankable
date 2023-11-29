@@ -13,24 +13,19 @@ app = Flask(__name__)
 
 
 # X_test=pd.read_csv(PATH+'X_test.csv')
-y_test=pd.read_csv('./Datas/y_test.csv')
+# y_test=pd.read_csv('./Datas/y_test.csv')
 dataframe=pd.read_csv('./Datas/df_test.csv')
+dataframePartial = dataframe.sample(frac=0.05, axis = None)
 
+# Chargement de notre meilleur modèle
 # rb means "Read Binary format"
 model = pickle.load(open('./Datas/model.pkl','rb'))
 
-# Chargement de notre meilleur modèle
-# model_path = "C:/Users/DELL/Formation OC/Are you bankable/mlruns/0/5a2e644740814386984668c09df0f373/artifacts/best_model/model.pkl"
-# @app.before_request
-# def load_modele(path):
-#     return joblib.load(open(path, 'rb'))
-
-# model = load_modele(model_path)
 
 @app.route("/")
 def hello():
     """
-    Default route to display "Hello World!" message just to test you are good with flask :).
+    Default route to display "Hello World!" message just to test we are good with flask :).
     """
     return "Hello World"
 
@@ -41,15 +36,14 @@ def hello():
 
 def credit(id_client):
 
-    #récupération id client depuis argument url
-    #id_client = request.args.get('id_client', default=1, type=int)
-           
-    #calcul prédiction défaut et probabilité de défaut
+    # récupération id client depuis argument url    
+    # calcul prédiction défaut et probabilité de défaut
+
     #  Conversion en integer de l'Id client
     ID = int(id_client)   
     
 # récupération des données clients
-    X = dataframe[dataframe['SK_ID_CURR'] == ID]
+    X = dataframePartial[dataframePartial['SK_ID_CURR'] == ID]
     X = X.drop(['TARGET', 'SK_ID_CURR'], axis=1)
     
     prediction = model.predict(X)
