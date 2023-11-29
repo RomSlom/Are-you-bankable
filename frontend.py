@@ -55,7 +55,7 @@ def chargement_ligne_data(id, df):
 st.sidebar.title("Menus")
 sidebar_selection = st.sidebar.radio(
     'Select Menu:',
-    ['Overview', 'Model & Prediction','Explications and Comparisons'],
+    ['Overview', 'Model & Prediction','Explication and Comparison'],
     )
 
 
