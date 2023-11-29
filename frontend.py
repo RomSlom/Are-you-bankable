@@ -10,7 +10,7 @@ import json
 
 
 
-show_pages_from_config (".streamlit/pages.toml")
+# show_pages_from_config (".streamlit/pages.toml")
 
 st.markdown(
     """
