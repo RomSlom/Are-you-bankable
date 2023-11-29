@@ -45,9 +45,9 @@ def get_data(filename):
     return credit_data
 
 
-@st.cache #mise en cache de la fonction pour exécution unique
-def chargement_ligne_data(id, df):
-    return df[df['SK_ID_CURR']==int(id)].drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1)
+# @st.cache #mise en cache de la fonction pour exécution unique
+# def chargement_ligne_data(id, df):
+#     return df[df['SK_ID_CURR']==int(id)].drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1)
 
 
 
