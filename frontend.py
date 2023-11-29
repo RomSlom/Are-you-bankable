@@ -71,50 +71,50 @@ with dataset:
 
     
     
-with model_training:
-    # st.header("Time to train our chosen model!")
-    # st.text("You can choose some hyperparameters for the chosen model")
+# with model_training:
+#     # st.header("Time to train our chosen model!")
+#     # st.text("You can choose some hyperparameters for the chosen model")
     
-    model_selection_column, display_column = st.columns(2)
-    test_clients = pd.read_csv('./Datas/dFreduced.csv')
-    liste_id = test_clients['SK_ID_CURR'].tolist()
+#     model_selection_column, display_column = st.columns(2)
+#     test_clients = pd.read_csv('./Datas/dFreduced.csv')
+#     liste_id = test_clients['SK_ID_CURR'].tolist()
 
-     # Choose a client
+#      # Choose a client
 
-    # chosen_client = str(model_selection_column.selectbox("Please chose your client ID", test_clients['SK_ID_CURR']))
-    chosen_client = st.text_input('Veuillez saisir l\'identifiant d\'un client:', )
+#     # chosen_client = str(model_selection_column.selectbox("Please chose your client ID", test_clients['SK_ID_CURR']))
+#     chosen_client = st.text_input('Veuillez saisir l\'identifiant d\'un client:', )
 
-    st.success("client chosen")
+#     st.success("client chosen")
     
-    if chosen_client == '':
-        st.write('Veuillez recommencer')
+#     if chosen_client == '':
+#         st.write('Veuillez recommencer')
     
-    # Si le numéro de client est un numéro valide:
-    elif (int(chosen_client) in liste_id) :
+#     # Si le numéro de client est un numéro valide:
+#     elif (int(chosen_client) in liste_id) :
           
-        # On peut appeler l'API
-        API_url = "http://127.0.0.1:5000/credit/" + chosen_client
+#         # On peut appeler l'API
+#         API_url = "http://127.0.0.1:5000/credit/" + chosen_client
           
-        with st.spinner('Attente du score du client choisi ...'):
+#         with st.spinner('Attente du score du client choisi ...'):
             
-          json_url = urlopen(API_url)
+#           json_url = urlopen(API_url)
           
-          API_data = json.loads(json_url.read())
-          classe_predite = API_data["prediction"]
-          if classe_predite == 1:
-              resultat = "client dangereux"
-          else:
-              resultat = "client peu risqué"
+#           API_data = json.loads(json_url.read())
+#           classe_predite = API_data["prediction"]
+#           if classe_predite == 1:
+#               resultat = "client dangereux"
+#           else:
+#               resultat = "client peu risqué"
           
-          proba = 1- API_data["proba"]
+#           proba = 1- API_data["proba"]
           
-          #affichage de la prédiction
-          prediction = API_data['proba']
-          # classe_reelle = dataframe[dataframe['SK_ID_CURR']==int(chosen_client)]['LABELS'].values[0]
-          # classe_reelle = str(classe_reelle).replace('0', 'sans défaut').replace('1', 'avec défaut')
-          chaine = 'Prédiction : **' + resultat +  '** avec **' + str(round(proba*100)) + '%** de risque d''erreur '
+#           #affichage de la prédiction
+#           prediction = API_data['proba']
+#           # classe_reelle = dataframe[dataframe['SK_ID_CURR']==int(chosen_client)]['LABELS'].values[0]
+#           # classe_reelle = str(classe_reelle).replace('0', 'sans défaut').replace('1', 'avec défaut')
+#           chaine = 'Prédiction : **' + resultat +  '** avec **' + str(round(proba*100)) + '%** de risque d''erreur '
 
-        st.markdown(chaine)
+#         st.markdown(chaine)
 
         st.subheader("Caractéristiques influençant le score")
           
