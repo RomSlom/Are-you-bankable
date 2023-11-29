@@ -29,7 +29,7 @@ def hello():
     return "Hello My World"
 
 
-@app.route("/credit/<id_client>", methods=['POST'])
+@app.route("/credit/<id_client>", methods=['GET'])
 # on créer une route qui va afficher la prédiction client (id_client étant utilisé dans la fonction ci-dessous)
 #  Le client (streamlit) allant sur cette adresse  fait cette requête pour obtenir quelque chose (le return de la fonction).
 
