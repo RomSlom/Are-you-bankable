@@ -11,7 +11,6 @@ warnings.filterwarnings("ignore", category=UserWarning)
 app = Flask(__name__)
 
 
-
 # X_test=pd.read_csv(PATH+'X_test.csv')
 # y_test=pd.read_csv('./Datas/y_test.csv')
 dataframe=pd.read_csv('./Datas/dFreduced.csv')

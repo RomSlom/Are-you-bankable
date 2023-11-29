@@ -6,7 +6,7 @@ import mlflow
 import pickle
 from urllib.request import urlopen
 import json
-from PIL import Image
+# from PIL import Image
 
 
 
@@ -30,18 +30,12 @@ dataset= st.container()
 model_training = st.container()
 
 
-#Load Dataframe
+# #Load Dataframe
 
-X_test=pd.read_csv('./Datas/X_test.csv')
-y_test=pd.read_csv('./Datas/y_test.csv')
-# dataframe=pd.read_csv('./Datas/df_test.csv')
+# X_test=pd.read_csv('./Datas/X_test.csv')
+# y_test=pd.read_csv('./Datas/y_test.csv')
+dataframe=pd.read_csv('./Datas/dFreduced.csv')
 
-
-
-
-@st.cache #mise en cache de la fonction pour exécution unique
-def chargement_ligne_data(id, df):
-    return df[df['SK_ID_CURR']==int(id)].drop(['Unnamed: 0', 'Unnamed: 0.1'], axis=1)
 
 
 
@@ -82,7 +76,7 @@ with model_training:
     # st.text("You can choose some hyperparameters for the chosen model")
     
     model_selection_column, display_column = st.columns(2)
-    test_clients = pd.read_csv('./Datas/df_test.csv')
+    test_clients = pd.read_csv('./Datas/dFreduced.csv')
     liste_id = test_clients['SK_ID_CURR'].tolist()
 
      # Choose a client
