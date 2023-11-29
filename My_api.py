@@ -26,7 +26,7 @@ def hello():
     """
     Default route to display "Hello World!" message just to test we are good with flask :).
     """
-    return "Hello World"
+    return "Hello My World"
 
 
 # @app.route("/credit/<id_client>", methods=['POST'])
