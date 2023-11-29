@@ -30,7 +30,7 @@ Pillow==9.4.0
 ply==3.11
 protobuf==4.24.4
 py4j==0.10.9.7
-pyarrow==13.0.0
+pyarrow==14.0.1
 pydeck==0.8.1b0
 PyQt5==5.15.7
 pywin32==305.1
