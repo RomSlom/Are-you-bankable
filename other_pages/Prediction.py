@@ -5,13 +5,13 @@ from urllib.request import urlopen
 import json
 
 # load our best model
-PATH = "C:/Users/DELL/Formation OC/Are you bankable/Datas/"
+PATH = "C:/Users/DELL/Formation OC/API + STREAMLIT/Datas/"
 
 #Load Dataframe
 
-X_test=pd.read_csv(PATH+'X_test.csv')
-y_test=pd.read_csv(PATH+'y_test.csv')
-dataframe=pd.read_csv(PATH+'df_test.csv')
+# X_test=pd.read_csv(PATH+'X_test.csv')
+# y_test=pd.read_csv(PATH+'y_test.csv')
+dataframe=pd.read_csv(PATH+'dFreduced.csv')
 
 # Main sections
 header = st.container()
@@ -34,7 +34,7 @@ with model_training:
    
        
     model_selection_column, display_column = st.columns(2)
-    test_clients = pd.read_csv(PATH+'df_test.csv')
+    test_clients = pd.read_csv(PATH+'dFreduced.csv')
     liste_id = test_clients['SK_ID_CURR'].tolist()
 
      # Choose a client
