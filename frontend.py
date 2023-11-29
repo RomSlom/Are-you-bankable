@@ -39,10 +39,10 @@ dataframe=pd.read_csv('./Datas/dFreduced.csv')
 
 
 
-@st.cache_data #Cette fonction ne sera exécutée qu'une seule fois
-def get_data(filename):
-    credit_data = pd.read_csv(filename)
-    return credit_data
+# @st.cache_data #Cette fonction ne sera exécutée qu'une seule fois
+# def get_data(filename):
+#     credit_data = pd.read_csv(filename)
+#     return credit_data
 
 
 # @st.cache #mise en cache de la fonction pour exécution unique
