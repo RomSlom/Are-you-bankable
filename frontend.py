@@ -129,34 +129,34 @@ with model_training:
 # Set the experiment
 # Mlflow tracking
 
-    track_with_mlflow = st.checkbox(
-        "📈 Track with mlflow? ", help="Mark to track experiment with MLflow"
-    )
+    # track_with_mlflow = st.checkbox(
+    #     "📈 Track with mlflow? ", help="Mark to track experiment with MLflow"
+    # )
 
-    # Model training
-    start_training = st.button("💪 Start training", help="Train and evaluate ML model")
-    if not start_training:
-        st.stop()
+#     # Model training
+#     start_training = st.button("💪 Start training", help="Train and evaluate ML model")
+#     if not start_training:
+#         st.stop()
 
-    if track_with_mlflow:
-        mlflow.set_experiment(data_choice)
-        mlflow.start_run()
-        mlflow.log_param("model", model_choice)
-        mlflow.log_param("features", feature_choice)
+#     if track_with_mlflow:
+#         mlflow.set_experiment(data_choice)
+#         mlflow.start_run()
+#         mlflow.log_param("model", model_choice)
+#         mlflow.log_param("features", feature_choice)
 
 
-mlflow.set_experiment("optimized_RF_Classifier")
+# mlflow.set_experiment("optimized_RF_Classifier")
 
-# Log a metric
-accuracy = 0.9
-mlflow.log_metric("accuracy", accuracy)
+# # Log a metric
+# accuracy = 0.9
+# mlflow.log_metric("accuracy", accuracy)
 
-# Log an artifact
-model = pickle.dumps(my_model)
-mlflow.log_artifact("model", model)
+# # Log an artifact
+# model = pickle.dumps(my_model)
+# mlflow.log_artifact("model", model)
 
-# Display the metrics and artifacts
-st.write("Accuracy:", accuracy)
-st.write("Model:", model)
+# # Display the metrics and artifacts
+# st.write("Accuracy:", accuracy)
+# st.write("Model:", model)
     
     
